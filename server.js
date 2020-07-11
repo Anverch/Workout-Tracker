@@ -1,7 +1,8 @@
 const express = require("express");
-const mongoose = require("mongoose");
-const seed = require("./seeders/seed");
-const routes = require("./routes/apiRoutes")
+// const mongoose = require("mongoose");
+// const seed = require("./seeders/seed");
+const routes = require("./routes/apiRoutes");
+const htmlRoutes = require("./routes/htmlRoutes");
 
 const PORT = process.env.PORT || 3000
 
@@ -14,6 +15,7 @@ app.use(express.static("public"));
 
 // routes
 app.use(routes);
+app.use(htmlRoutes);
 
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}!`);
